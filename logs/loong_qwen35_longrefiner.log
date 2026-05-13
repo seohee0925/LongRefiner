@@ -1,0 +1,8 @@
+Starting Qwen3.5 vLLM Qwen/Qwen3.5-27B on 127.0.0.1:8000
+vLLM CUDA_VISIBLE_DEVICES=0,1,2,3
+Stopping vLLM server pid=1327834
+Stopping vLLM server pid=1327834
+Stopping vLLM server pid=1327834
+Stopping vLLM server pid=1327834
+Stopping vLLM server pid=1327834
+Stopping vLLM server pid=1327834

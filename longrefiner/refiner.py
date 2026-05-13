@@ -22,6 +22,10 @@ class LongRefiner:
         score_model_name: str = "bge-reranker-v2-m3",
         score_model_path: str = "BAAI/bge-reranker-v2-m3",
         max_model_len: int = 25000,
+        tensor_parallel_size: int = 1,
+        gpu_memory_utilization: float = 0.7,
+        dtype: str = "auto",
+        enforce_eager: bool = False,
     ):
         # load refine model
         self._load_trained_model(
@@ -30,6 +34,10 @@ class LongRefiner:
             doc_structuring_module_lora_path,
             global_selection_module_lora_path,
             max_model_len,
+            tensor_parallel_size,
+            gpu_memory_utilization,
+            dtype,
+            enforce_eager,
         )
         self._load_score_model(score_model_name, score_model_path)
 
@@ -40,8 +48,20 @@ class LongRefiner:
         doc_structuring_module_lora_path: str,
         global_selection_module_lora_path: str,
         max_model_len: int = 25000,
+        tensor_parallel_size: int = 1,
+        gpu_memory_utilization: float = 0.7,
+        dtype: str = "auto",
+        enforce_eager: bool = False,
     ):
-        self.model = LLM(base_model_path, enable_lora=True, max_model_len=max_model_len, gpu_memory_utilization=0.7)
+        self.model = LLM(
+            base_model_path,
+            enable_lora=True,
+            max_model_len=max_model_len,
+            tensor_parallel_size=tensor_parallel_size,
+            gpu_memory_utilization=gpu_memory_utilization,
+            dtype=dtype,
+            enforce_eager=enforce_eager,
+        )
         self.tokenizer = AutoTokenizer.from_pretrained(base_model_path)
         self.step_to_config = {
             "query_analysis": {
@@ -295,7 +315,7 @@ class LongRefiner:
         # for each doc, get the input prompt and output the structured content
         prompt_list = sum(
             [
-                [prompt_template.get_prompt(doc_content=doc_content) for doc_content in zip(item_doc_content_list)]
+                [prompt_template.get_prompt(doc_content=doc_content) for doc_content in item_doc_content_list]
                 for item_doc_content_list in doc_content_list
             ],
             [],

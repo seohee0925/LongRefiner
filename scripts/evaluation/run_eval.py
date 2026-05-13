@@ -56,6 +56,15 @@ def parse_args():
     )
     parser.add_argument("--framework", type=str, default="vllm", help="Framework to use")
     parser.add_argument("--gpu_memory_utilization", type=float, default=0.85, help="GPU memory utilization ratio")
+    parser.add_argument("--refiner_tensor_parallel_size", type=int, default=1, help="Tensor parallel size for LongRefiner")
+    parser.add_argument(
+        "--refiner_gpu_memory_utilization",
+        type=float,
+        default=0.7,
+        help="GPU memory utilization ratio for LongRefiner",
+    )
+    parser.add_argument("--refiner_dtype", type=str, default="auto", help="LongRefiner vLLM dtype")
+    parser.add_argument("--refiner_enforce_eager", action="store_true", help="Run LongRefiner vLLM with eager mode")
     parser.add_argument("--generator_max_input_len", type=int, default=15000, help="Maximum input length for generator")
     parser.add_argument("--max_tokens", type=int, default=512, help="Maximum number of tokens to generate")
     parser.add_argument("--test_sample_num", type=int, default=1000, help="Number of test samples")
@@ -113,6 +122,10 @@ def run(args):
         score_model_name=args.score_model_name,
         score_model_path=args.score_model_path,
         max_model_len=25000,
+        tensor_parallel_size=args.refiner_tensor_parallel_size,
+        gpu_memory_utilization=args.refiner_gpu_memory_utilization,
+        dtype=args.refiner_dtype,
+        enforce_eager=args.refiner_enforce_eager,
     )
 
     # Prepare data

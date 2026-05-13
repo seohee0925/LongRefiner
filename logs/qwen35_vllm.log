@@ -1,0 +1,200 @@
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306] 
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306]        █     █     █▄   ▄█
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.1.dev1
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306]   █▄█▀ █     █     █     █  model   Qwen/Qwen3.5-27B
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:306] 
+(APIServer pid=1327834) INFO 05-13 02:05:38 [utils.py:240] non-default args: {'default_chat_template_kwargs': {'enable_thinking': False}, 'host': '127.0.0.1', 'model': 'Qwen/Qwen3.5-27B', 'trust_remote_code': True, 'max_model_len': 32768, 'enforce_eager': True, 'served_model_name': ['Qwen/Qwen3.5-27B'], 'tensor_parallel_size': 4, 'gpu_memory_utilization': 0.6, 'max_num_seqs': 1}
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_GPU_MEMORY_UTILIZATION
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_ENFORCE_EAGER
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_TRUST_REMOTE_CODE
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_DEFAULT_CHAT_TEMPLATE_KWARGS
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_MODEL_IMPL
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_MAX_MODEL_LEN
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_TENSOR_PARALLEL_SIZE
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_PYTHON
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_MODEL
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_MAX_NUM_SEQS
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_SERVED_MODEL_NAME
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_HEALTH_TIMEOUT
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_CUDA_VISIBLE_DEVICES
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_HOST
+(APIServer pid=1327834) WARNING 05-13 02:05:38 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_REASONING_PARSER
+(APIServer pid=1327834) INFO 05-13 02:05:40 [model.py:568] Resolved architecture: Qwen3_5ForConditionalGeneration
+(APIServer pid=1327834) INFO 05-13 02:05:40 [model.py:1697] Using max model len 32768
+(APIServer pid=1327834) INFO 05-13 02:05:40 [vllm.py:844] Asynchronous scheduling is enabled.
+(APIServer pid=1327834) WARNING 05-13 02:05:40 [vllm.py:900] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(APIServer pid=1327834) WARNING 05-13 02:05:40 [vllm.py:918] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(APIServer pid=1327834) INFO 05-13 02:05:40 [kernel.py:212] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(APIServer pid=1327834) INFO 05-13 02:05:41 [vllm.py:1093] Cudagraph is disabled under eager mode
+(APIServer pid=1327834) INFO 05-13 02:05:41 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+(APIServer pid=1327834) Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(APIServer pid=1327834) [transformers] `Qwen2VLImageProcessorFast` is deprecated. The `Fast` suffix for image processors has been removed; use `Qwen2VLImageProcessor` instead.
+(APIServer pid=1327834) Traceback (most recent call last):
+(APIServer pid=1327834)   File "<frozen runpy>", line 198, in _run_module_as_main
+(APIServer pid=1327834)   File "<frozen runpy>", line 88, in _run_code
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 733, in <module>
+(APIServer pid=1327834)     uvloop.run(run_server(args))
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/uvloop/__init__.py", line 92, in run
+(APIServer pid=1327834)     return runner.run(wrapper())
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/asyncio/runners.py", line 118, in run
+(APIServer pid=1327834)     return self._loop.run_until_complete(task)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "uvloop/loop.pyx", line 1512, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=1327834)   File "uvloop/loop.pyx", line 1505, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=1327834)   File "uvloop/loop.pyx", line 1379, in uvloop.loop.Loop.run_forever
+(APIServer pid=1327834)   File "uvloop/loop.pyx", line 557, in uvloop.loop.Loop._run
+(APIServer pid=1327834)   File "uvloop/loop.pyx", line 476, in uvloop.loop.Loop._on_idle
+(APIServer pid=1327834)   File "uvloop/cbhandles.pyx", line 83, in uvloop.loop.Handle._run
+(APIServer pid=1327834)   File "uvloop/cbhandles.pyx", line 61, in uvloop.loop.Handle._run
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=1327834)     return await main
+(APIServer pid=1327834)            ^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 693, in run_server
+(APIServer pid=1327834)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 707, in run_server_worker
+(APIServer pid=1327834)     async with build_async_engine_client(
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/contextlib.py", line 210, in __aenter__
+(APIServer pid=1327834)     return await anext(self.gen)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 100, in build_async_engine_client
+(APIServer pid=1327834)     async with build_async_engine_client_from_engine_args(
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/contextlib.py", line 210, in __aenter__
+(APIServer pid=1327834)     return await anext(self.gen)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 136, in build_async_engine_client_from_engine_args
+(APIServer pid=1327834)     async_llm = AsyncLLM.from_vllm_config(
+(APIServer pid=1327834)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/v1/engine/async_llm.py", line 217, in from_vllm_config
+(APIServer pid=1327834)     return cls(
+(APIServer pid=1327834)            ^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/v1/engine/async_llm.py", line 135, in __init__
+(APIServer pid=1327834)     self.input_processor = InputProcessor(self.vllm_config, renderer)
+(APIServer pid=1327834)                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/v1/engine/input_processor.py", line 61, in __init__
+(APIServer pid=1327834)     mm_budget = MultiModalBudget(vllm_config, mm_registry)
+(APIServer pid=1327834)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/multimodal/encoder_budget.py", line 87, in __init__
+(APIServer pid=1327834)     all_mm_max_toks_per_item = get_mm_max_toks_per_item(
+(APIServer pid=1327834)                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/multimodal/encoder_budget.py", line 25, in get_mm_max_toks_per_item
+(APIServer pid=1327834)     max_tokens_per_item = processor.info.get_mm_max_tokens_per_item(
+(APIServer pid=1327834)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/model_executor/models/qwen2_vl.py", line 825, in get_mm_max_tokens_per_item
+(APIServer pid=1327834)     max_image_tokens = self.get_max_image_tokens()
+(APIServer pid=1327834)                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/model_executor/models/qwen2_vl.py", line 968, in get_max_image_tokens
+(APIServer pid=1327834)     image_processor = self.get_image_processor()
+(APIServer pid=1327834)                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/model_executor/models/qwen3_vl.py", line 875, in get_image_processor
+(APIServer pid=1327834)     return self.get_hf_processor(**kwargs).image_processor
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/model_executor/models/qwen3_vl.py", line 868, in get_hf_processor
+(APIServer pid=1327834)     return self.ctx.get_hf_processor(
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/multimodal/processing/context.py", line 204, in get_hf_processor
+(APIServer pid=1327834)     return cached_processor_from_config(
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/transformers_utils/processor.py", line 355, in cached_processor_from_config
+(APIServer pid=1327834)     return cached_get_processor_without_dynamic_kwargs(
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/transformers_utils/processor.py", line 328, in cached_get_processor_without_dynamic_kwargs
+(APIServer pid=1327834)     final_processor = cached_get_processor(
+(APIServer pid=1327834)                       ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/transformers_utils/processor.py", line 198, in get_processor
+(APIServer pid=1327834)     processor = processor_cls.from_pretrained(
+(APIServer pid=1327834)                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/processing_utils.py", line 1429, in from_pretrained
+(APIServer pid=1327834)     args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, processor_dict, **kwargs)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/processing_utils.py", line 1558, in _get_arguments_from_pretrained
+(APIServer pid=1327834)     sub_processor = auto_processor_class.from_pretrained(
+(APIServer pid=1327834)                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/models/auto/image_processing_auto.py", line 559, in from_pretrained
+(APIServer pid=1327834)     config_dict, _ = ImageProcessingMixin.get_image_processor_dict(
+(APIServer pid=1327834)                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/image_processing_base.py", line 295, in get_image_processor_dict
+(APIServer pid=1327834)     resolved_image_processor_file = cached_file(
+(APIServer pid=1327834)                                     ^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/utils/hub.py", line 278, in cached_file
+(APIServer pid=1327834)     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/transformers/utils/hub.py", line 422, in cached_files
+(APIServer pid=1327834)     hf_hub_download(
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+(APIServer pid=1327834)     return fn(*args, **kwargs)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 997, in hf_hub_download
+(APIServer pid=1327834)     return _hf_hub_download_to_cache_dir(
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1072, in _hf_hub_download_to_cache_dir
+(APIServer pid=1327834)     (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+(APIServer pid=1327834)                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1669, in _get_metadata_or_catch_error
+(APIServer pid=1327834)     metadata = get_hf_file_metadata(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+(APIServer pid=1327834)     return fn(*args, **kwargs)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1591, in get_hf_file_metadata
+(APIServer pid=1327834)     response = _httpx_follow_relative_redirects_with_backoff(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 685, in _httpx_follow_relative_redirects_with_backoff
+(APIServer pid=1327834)     response = http_backoff(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 559, in http_backoff
+(APIServer pid=1327834)     return next(
+(APIServer pid=1327834)            ^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 467, in _http_backoff_base
+(APIServer pid=1327834)     response = client.request(method=method, url=url, **kwargs)
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+(APIServer pid=1327834)     return self.send(request, auth=auth, follow_redirects=follow_redirects)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+(APIServer pid=1327834)     response = self._send_handling_auth(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+(APIServer pid=1327834)     response = self._send_handling_redirects(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+(APIServer pid=1327834)     response = self._send_single_request(request)
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+(APIServer pid=1327834)     response = transport.handle_request(request)
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+(APIServer pid=1327834)     resp = self._pool.handle_request(req)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+(APIServer pid=1327834)     raise exc from None
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+(APIServer pid=1327834)     response = connection.handle_request(
+(APIServer pid=1327834)                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+(APIServer pid=1327834)     return self._connection.handle_request(request)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+(APIServer pid=1327834)     raise exc
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+(APIServer pid=1327834)     ) = self._receive_response_headers(**kwargs)
+(APIServer pid=1327834)         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+(APIServer pid=1327834)     event = self._receive_event(timeout=timeout)
+(APIServer pid=1327834)             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+(APIServer pid=1327834)     data = self._network_stream.read(
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+(APIServer pid=1327834)     return self._sock.recv(max_bytes)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/ssl.py", line 1295, in recv
+(APIServer pid=1327834)     return self.read(buflen)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/opt/conda/lib/python3.11/ssl.py", line 1168, in read
+(APIServer pid=1327834)     return self._sslobj.read(len)
+(APIServer pid=1327834)            ^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=1327834)   File "/workspace/vllm-qwen35-cu128/vllm/entrypoints/openai/api_server.py", line 579, in signal_handler
+(APIServer pid=1327834)     raise KeyboardInterrupt("terminated")
+(APIServer pid=1327834) KeyboardInterrupt: terminated
